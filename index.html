@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./showdown.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./master.css">
+  </head>
+  <body>
+    <div class='content'># Hello there!
+## My name is Ian Seyer.
+> I am a sculptor and software engineer
+> Currently employed by [message.io](https://message.io) as a devops engineer.
+> contact me at _my first and last name_ @ gmail
+    </div>
+    <script type="text/javascript">
+      var converter = new showdown.Converter();
+      converter.setFlavor('github');
+      console.log(converter.makeHtml($('.content').text()))
+      $('.content').html(converter.makeHtml($('.content').text()));
+    </script>
+  </body>
+</html>
